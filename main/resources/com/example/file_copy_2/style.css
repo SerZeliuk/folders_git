@@ -1,0 +1,195 @@
+.root {
+    -fx-background-color: #FFFFFF;
+    -fx-background-image: url('img.png');
+    -fx-background-size: 90% 80%;
+    -fx-background-repeat: no-repeat;
+}
+.label {
+    -fx-text-fill: #000000;
+    -fx-font-weight: 600;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoi-UI";
+}
+
+.text-field {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 30px;
+    -fx-border-color: purple;
+    -fx-border-radius: 15px;
+    -fx-background-color: #b2bec3AA;
+    -fx-background-radius: 15px;
+    -fx-text-fill: #000000;
+    -fx-padding: 5px;
+}
+.text-field:disabled {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 30px;
+    -fx-border-color: purple;
+    -fx-border-radius: 15px;
+    -fx-background-color: #b2bec3AA;
+    -fx-background-radius: 15px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: 600;
+    -fx-padding: 5px;
+}
+#left_photo{
+    -fx-font-weight: 700;
+    -fx-font-size: 16px;
+    -fx-opacity: 80%;
+    -fx-background-color: grey;
+}
+#right_photo{
+    -fx-font-weight: 700;
+    -fx-font-size: 16px;
+    -fx-opacity: 80%;
+    -fx-background-color: grey;
+}
+#left_photo:disabled{
+    -fx-font-weight: 700;
+    -fx-font-size: 16px;
+    -fx-opacity: 40%;
+    -fx-background-color: #c7c7c7;
+}
+#right_photo:disabled{
+    -fx-font-weight: 700;
+    -fx-font-size: 16px;
+    -fx-opacity: 40%;
+    -fx-background-color: #c7c7c7;
+}
+#photoLabel{
+    -fx-background-color: rgba(255, 255, 255, 0.67);
+    -fx-font-size: 16px;
+    -fx-opacity: 650;
+
+}
+#videoLabel{
+    -fx-background-color: rgba(255, 255, 255, 0.67);
+    -fx-font-size: 16px;
+    -fx-opacity: 650;
+}
+
+#myProgressLabelVideos{
+    -fx-background-color: rgba(255, 255, 255, 0.17);
+
+    -fx-font-size: 19px;
+    -fx-font-weight: 700;
+}
+
+#myProgressLabelPhotos{
+    -fx-background-color: rgba(255, 255, 255, 0.17);
+    -fx-font-size: 19px;
+    -fx-font-weight: 700;
+}
+#directoryField2{
+    -fx-font-weight: 700;
+}
+#deleteVideo:disabled{
+    -fx-opacity: 0.65;
+}
+.progress-bar .bar {
+    -fx-background-color: #f56e00;
+}
+
+#left_video{
+    -fx-font-weight: 700;
+    -fx-font-size: 16px;
+    -fx-opacity: 80%;
+    -fx-background-color: grey;
+}
+#right_video{
+    -fx-font-weight: 700;
+    -fx-font-size: 16px;
+    -fx-opacity: 80%;
+    -fx-background-color: grey;
+}
+#left_video:disabled{
+    -fx-font-weight: 700;
+    -fx-font-size: 16px;
+    -fx-opacity: 40%;
+    -fx-background-color: #c7c7c7;
+}
+#right_video:disabled{
+    -fx-font-weight: 700;
+    -fx-font-size: 16px;
+    -fx-opacity: 40%;
+    -fx-background-color: #c7c7c7;
+}
+
+/*#mediaViewContainer{
+    -fx-background-color: blue;
+}
+#photosContainer{
+    -fx-background-color: yellow;
+}*/
+#nazwa_folderu{
+    -fx-font-size: 17px;
+    -fx-font-weight: 700;
+}
+#kopiuj{
+    -fx-background-color: #f50000;
+    -fx-opacity: 95%;
+    -fx-background-radius: 15px;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-pref-height: 30px;
+    -fx-padding: 5px 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+
+
+}
+
+#kopiuj:disabled{
+    -fx-background-color: #885b5b;
+    -fx-opacity: 65%;
+    -fx-background-radius: 15px;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-pref-height: 30px;
+    -fx-padding: 5px 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+}
+
+.button {
+    -fx-background-color: #f56e00;
+    -fx-opacity: 95%;
+    -fx-background-radius: 15px;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-pref-height: 30px;
+    -fx-padding: 5px 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: #74b9ff;
+}
+
+.menu-bar {
+    -fx-background-color: #636e72;
+}
+
+.menu {
+    -fx-text-fill: #dfe6e9;
+    -fx-font-family: "Arial";
+}
+
+.menu-item {
+    -fx-text-fill: #2d3436;
+}
+
+.vbox, .hbox {
+    -fx-spacing: 10px;
+}
+
+.stack-pane {
+    -fx-background-color: #AAAAAA;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+.media-view {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 2);
+}

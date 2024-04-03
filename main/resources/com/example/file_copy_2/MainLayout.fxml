@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.file_copy_2.JavaFXCustomInterfaceController">
+    <top>
+        <MenuBar>
+            <Menu text="Options">
+                <MenuItem onAction="#clearTextFields" text="clear all" />
+                <MenuItem text="bla-bla" />
+                <MenuItem text="ble-ble" />
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="25" />
+            </padding>
+
+            <HBox spacing="5">
+                <Label minWidth="175" text="Główny folder" />
+                <TextField fx:id="directoryField1" />
+                <Button onAction="#chooseDirectory1" text="Browse" />
+                <Button onAction="#get_next_folder" minWidth="50" text="Pusty"/>
+            </HBox>
+            <HBox spacing="5">
+                <Label minWidth="175" text="Folder następnego klienta" />
+                <TextField fx:id="directoryField2" />
+                <Button onAction="#chooseDirectory2" text="Browse" />
+                <Button onAction="#get_previous_folder" minWidth="50" text="Wstecz"/>
+                <Button onAction="#get_next_folder1" minWidth="50" text="Dalej"/>
+
+            </HBox>
+            <HBox spacing="5">
+                <Label minWidth="175" text="Ścieżka do aparatu" />
+                <TextField fx:id="directoryField3" />
+                <Button onAction="#chooseDirectory3" text="Browse" />
+            </HBox>
+            <HBox spacing="5">
+                <Label minWidth="175" text="Ścieżka do kamery" />
+                <TextField fx:id="directoryField4" />
+                <Button onAction="#chooseDirectory4" text="Browse" />
+            </HBox>
+
+            <HBox spacing="30">
+                <padding>
+                    <Insets top = "100" left="20" right="10" />
+                </padding>
+                <!-- Photo progress and label -->
+                <VBox spacing="5">
+                    <Label fx:id="myProgressLabelPhotos" textAlignment="CENTER" minWidth="200" />
+                    <ProgressBar fx:id="myProgressBarPhotos" minWidth="200" />
+                </VBox>
+
+                <!-- Video progress and label -->
+                <VBox spacing="5">
+                    <Label fx:id="myProgressLabelVideos" textAlignment="CENTER" minWidth="200" />
+                    <ProgressBar fx:id="myProgressBarVideos" minWidth="200" />
+                </VBox>
+            </HBox>
+
+        </VBox>
+
+    </center>
+    <right>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <children>
+                <Button minHeight="50" minWidth="150" onAction="#show_komplet" text="Komplet" />
+                <Button minHeight="50" minWidth="150" onAction="#show_photos" text="Zdjęcia" />
+                <Button minHeight="50" minWidth="150" onAction="#show_videos" text="Film"/>
+<!--            <Button minHeight="50" minWidth="150" onAction="#delete_current" text="zajebałem się mułem" />-->
+                <Button minHeight="100" fx:id="kopiuj" onAction="#copy_the_files" minWidth="150">
+                    <graphic>
+                        <VBox alignment="CENTER">
+                        <Label fx:id="kopiuj_label" text="KOPIUJ DO: " minHeight="30"/>
+
+                        <Label fx:id="nazwa_folderu"/>
+
+                    </VBox>
+                    </graphic>
+                </Button>
+            </children>
+        </VBox>
+    </right>
+    <bottom>
+        <HBox alignment="BOTTOM_LEFT" prefWidth="800.0" spacing="50">
+            <padding>
+                <Insets bottom="20" left="10" right="10" top="10" />
+            </padding>
+            <StackPane fx:id="mediaViewContainer" focusTraversable="true" alignment="BOTTOM_LEFT" layoutX="-100.0" prefHeight="300" prefWidth="450">
+            <BorderPane>
+                    <left>
+                        <Button fx:id="left_video" minHeight="50" minWidth="50" onAction="#showPreviousVideo"  BorderPane.alignment="CENTER"/>
+                    </left>
+                <top>
+                    <Button fx:id="deleteVideo" minHeight="50" minWidth="75" text="Usuń film" onAction="#delete_current_video"  BorderPane.alignment="CENTER"/>
+                </top>
+                    <center>
+                        <VBox alignment="CENTER">
+                            <MediaView fx:id="mediaView" fitWidth="300"/>
+                            <Slider fx:id="seekSlider" maxWidth="300" minHeight="50"/>
+                            <HBox spacing="250">
+                                <Label fx:id="duration_label" alignment="CENTER_LEFT"/>
+                                <Label fx:id="max_duration" alignment="CENTER_RIGHT"/>
+                            </HBox>
+                            <Button fx:id="playPauseButton" text="Play" minHeight="40" onAction="#togglePlayPause" alignment="CENTER"/>
+
+                        </VBox>
+
+                    </center>
+                    <right>
+
+                        <Button fx:id="right_video" minHeight="50" minWidth="50" onAction="#showNextVideo" BorderPane.alignment="CENTER"/>
+                    </right>
+                    <bottom>
+                        <VBox alignment="CENTER">
+                            <Label fx:id="videoLabel" minWidth="100" minHeight="25" textAlignment="CENTER" BorderPane.alignment="CENTER"/>
+                        </VBox>
+
+                    </bottom>
+                </BorderPane>
+            </StackPane>
+            <StackPane fx:id="photosContainer" prefHeight="200.0" prefWidth="300.0">
+                <BorderPane>
+                    <left>
+                        <Button fx:id="left_photo" minHeight="50" minWidth="50" onAction="#showPreviousPhoto"  BorderPane.alignment="CENTER"/>
+                    </left>
+                    <top>
+                        <Button fx:id="deletePhoto" minHeight="50" minWidth="75" text="Usuń zdjęcie" onAction="#delete_current_photo"  BorderPane.alignment="CENTER"/>
+                    </top>
+                    <center>
+
+                        <ImageView fx:id="photoImageView" fitHeight="250" fitWidth="450"/>
+                        </center>
+                    <right>
+                        <Button fx:id="right_photo" minHeight="50" minWidth="50" onAction="#showNextPhoto" BorderPane.alignment="CENTER"/>
+                    </right>
+                    <bottom>
+                        <Label fx:id="photoLabel" textAlignment="CENTER" minWidth="100" minHeight="25" BorderPane.alignment="CENTER"/>
+                    </bottom>
+                </BorderPane>
+            </StackPane>
+
+        </HBox>
+    </bottom>
+</BorderPane>
